@@ -1,7 +1,9 @@
 name: animated_3d_card
 description: Nice animated 3D card for Flutter Inspired By https://www.youtube.com/watch?v=K6gxMk8wwmY
 version: 0.0.1
-homepage:
+homepage: https://github.com/Obada2020/Animated-3D-Card/blob/main/README.md
+# repository link of your package.
+repository: https://github.com/Obada2020/Animated-3D-Card
 
 environment:
   sdk: '>=3.0.2 <4.0.0'
