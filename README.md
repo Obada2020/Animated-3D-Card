@@ -3,4 +3,4 @@ Animated 3D Card
 # Preview link
 https://animated-3d-card.web.app/#/
 # Example 
-![](https://github.com/Obada2020/button_animations/blob/main/assets/example.gif)
+![](https://github.com/Obada2020/Animated-3D-Card/blob/main/assets/example.gif)
