@@ -5,5 +5,5 @@ Animated 3D Card
 https://animated-3d-card.web.app/#/
 # Example 
 <p align='center'>
-    <img src="https://github.com/Obada2020/Animated-3D-Card/blob/main/assets/example.gif" />
+    <img src="https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example.gif" />
 </p>
