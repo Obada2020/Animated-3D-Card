@@ -1,5 +1,4 @@
-# **Need a Expert Flutter developer? [I'm available](<[https://www.linkedin.com/in/hansonjon](https://www.linkedin.com/in/alhalabi-obada-6b2a89290/)/>)!**
-
+# **Need a Expert Flutter developer? [I'm available](https://www.linkedin.com/in/alhalabi-obada-6b2a89290/)!**
 # Animated-3D-Card
 
 Animated 3D Card
@@ -11,5 +10,5 @@ https://animated-3d-card.web.app/#/
 # Example
 
 <p align='center'>
-    <img src="https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example.gif" />
+    <img src="https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example.mp4" />
 </p>
