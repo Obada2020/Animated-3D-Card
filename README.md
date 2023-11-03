@@ -10,5 +10,5 @@ https://animated-3d-card.web.app/#/
 # Example
 
 <p align='center'>
-    <img src="https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example.mp4" />
+    <video src='https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example.mp4' width=180/>
 </p>
