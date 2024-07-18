@@ -12,9 +12,9 @@ https://animated-3d-card.web.app/#/
 <p align='center'>
     <video src='https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example.gif?raw=true' width=180/>
 </p>
-<!-- 
-<!-- # Example 2
+
+# Example 2
 
 <p align='center'>
     <video src='https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example2.gif?raw=true' width=180/>
-</p> --> -->
+</p>
