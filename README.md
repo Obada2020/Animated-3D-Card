@@ -12,3 +12,8 @@ https://animated-3d-card.web.app/#/
 <p align='center'>
     <video src='https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example.gif' width=180/>
 </p>
+
+
+<p align='center'>
+    <video src='https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example2.gif' width=180/>
+</p>
