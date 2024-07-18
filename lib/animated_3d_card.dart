@@ -3,10 +3,17 @@ library animated_3d_card;
 import 'package:flutter/material.dart';
 
 class CustomAnimated3DCard extends StatefulWidget {
-  final String titleImage;
+  final dynamic titleImage;
   final String characterImage;
   final String coverImage;
   final String targetUrl;
+  final Function(bool isHovered)? onHover;
+  final double? width;
+  final double? height;
+  final double? widthCharacter;
+  final double? heightCharacter;
+  final double? titleBottomPadding;
+  final bool? withShadow;
 
   const CustomAnimated3DCard({
     super.key,
@@ -14,6 +21,13 @@ class CustomAnimated3DCard extends StatefulWidget {
     required this.characterImage,
     required this.coverImage,
     required this.targetUrl,
+    this.onHover,
+    this.width,
+    this.height,
+    this.widthCharacter,
+    this.heightCharacter,
+    this.withShadow,
+    this.titleBottomPadding,
   });
 
   @override
@@ -44,6 +58,9 @@ class CustomAnimated3DCardState extends State<CustomAnimated3DCard>
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        if (widget.onHover != null) {
+          widget.onHover!(isHovered);
+        }
         setState(() {
           isHovered = !isHovered;
           if (isHovered) {
@@ -54,6 +71,9 @@ class CustomAnimated3DCardState extends State<CustomAnimated3DCard>
         });
       },
       onHover: (hovered) {
+        if (widget.onHover != null) {
+          widget.onHover!(isHovered);
+        }
         setState(() {
           isHovered = hovered;
           if (isHovered) {
@@ -64,11 +84,11 @@ class CustomAnimated3DCardState extends State<CustomAnimated3DCard>
         });
       },
       child: Container(
-        width: 200,
-        height: 300,
-        margin: const EdgeInsets.symmetric(horizontal: 50),
+        width: widget.width ?? 200,
+        height: widget.height ?? 300,
         decoration: BoxDecoration(
-          boxShadow: isHovered
+          color: Colors.transparent,
+          boxShadow: isHovered && (widget.withShadow ?? false)
               ? [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.75),
@@ -99,54 +119,56 @@ class CustomAnimated3DCardState extends State<CustomAnimated3DCard>
                 ),
               ),
             ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                height: 80,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.transparent,
-                      Colors.transparent,
-                      const Color(0xFF0C0D13).withOpacity(0.5),
-                      const Color(0xFF0C0D13),
-                    ],
+            if (widget.withShadow ?? false) ...[
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  height: 80,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.transparent,
+                        const Color(0xFF0C0D13).withOpacity(0.5),
+                        const Color(0xFF0C0D13),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                height: isHovered ? 120 : 80,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.transparent,
-                      Colors.transparent,
-                      const Color(0xFF0C0D13).withOpacity(0.5),
-                      const Color(0xFF0C0D13),
-                    ],
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  height: isHovered ? 120 : 80,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.transparent,
+                        const Color(0xFF0C0D13).withOpacity(0.5),
+                        const Color(0xFF0C0D13),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
+            ],
             AnimatedPositioned(
               duration: const Duration(milliseconds: 500),
               bottom: isHovered ? 70 : 0,
               left: 0,
               right: 0,
               child: SizedBox(
-                width: 300,
-                height: 300,
+                width: widget.widthCharacter ?? 300,
+                height: widget.heightCharacter ?? 300,
                 child: AnimatedOpacity(
                   opacity: isHovered ? 1 : 0,
                   duration: const Duration(milliseconds: 500),
@@ -161,19 +183,20 @@ class CustomAnimated3DCardState extends State<CustomAnimated3DCard>
             ),
             AnimatedPositioned(
               duration: const Duration(milliseconds: 500),
-              bottom: !isHovered ? 0 : 20,
+              bottom: !isHovered ? 0 : widget.titleBottomPadding ?? 20,
               left: 0,
               right: 0,
               child: SizedBox(
-                width: 100,
-                height: 50,
-                child: Image.network(
-                  widget.titleImage,
-                  fit: BoxFit.contain,
-                  width: double.infinity,
-                  height: double.infinity,
-                ),
-              ),
+                  width: 100,
+                  height: 50,
+                  child: widget.titleImage is String
+                      ? Image.network(
+                          widget.titleImage,
+                          fit: BoxFit.contain,
+                          width: double.infinity,
+                          height: double.infinity,
+                        )
+                      : widget.titleImage),
             ),
           ],
         ),
