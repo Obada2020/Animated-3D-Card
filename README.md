@@ -7,12 +7,13 @@ Animated 3D Card
 
 https://animated-3d-card.web.app/#/
 
-# Example
+# Example 1
 
 <p align='center'>
     <video src='https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example.gif' width=180/>
 </p>
 
+# Example 2
 
 <p align='center'>
     <video src='https://raw.githubusercontent.com/Obada2020/Animated-3D-Card/main/assets/example2.gif' width=180/>
