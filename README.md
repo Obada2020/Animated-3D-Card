@@ -10,11 +10,11 @@ https://animated-3d-card.web.app/#/
 # Example 1
 
 <p align='center'>
-    <video src='/assets/example.gif?raw=true' width=180/>
+    <img src='/assets/example.gif?raw=true' width=180px/>
 </p>
 
 # Example 2
 
 <p align='center'>
-    <video src='/assets/example2.gif?raw=true' width=180/>
+    <img src='/assets/example2.gif?raw=true' width=180px/>
 </p>
